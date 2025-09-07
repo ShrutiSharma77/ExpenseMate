@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens */
+:root{
+  --accent: #7c3aed;
+  --accent-2: #ff6bcb;
+  --bg-light: #ffffff;
+  --muted: #6b7280;
+  --dark-bg: #0b1020;
+  --card-dark: #13161b;
+  --glass-light: rgba(255,255,255,0.65);
+  --glass-dark: rgba(255,255,255,0.03);
+}
+html,body,#root{height:100%}
+body{font-family:Poppins, Inter, system-ui, -apple-system, 'Segoe UI', Roboto; background:var(--bg-light); color:#0f172a}
+.dark body{background:var(--dark-bg); color:#e6eef8}
+
+/* components */
+.card{ @apply rounded-2xl bg-white shadow-soft border border-slate-100; }
+.dark .card{ background: var(--card-dark); border-color: rgba(255,255,255,0.04); box-shadow: 0 6px 24px rgba(2,6,23,0.6); }
+.logo-mark{ @apply w-16 h-16 rounded-xl flex items-center justify-center font-black text-white text-xl; background: linear-gradient(135deg,var(--accent),var(--accent-2)); }
+.logo-text{ background: linear-gradient(90deg,var(--accent),var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight:800; }
+.btn{ @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition; }
+.btn-primary{ background: linear-gradient(90deg,var(--accent),var(--accent-2)); color:white; }
+.btn-ghost{ @apply hover:bg-slate-100 dark:hover:bg-opacity-10; }
+.input{ @apply w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 outline-none; }
+.dark .input{ background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.05) }
+.small{ @apply text-sm text-[var(--muted)]; }
+
+.glass{ backdrop-filter: blur(10px); background: linear-gradient(180deg, var(--glass-light), rgba(255,255,255,0.5)); border: 1px solid rgba(255,255,255,0.6); }
+.dark .glass{ background: linear-gradient(180deg, var(--glass-dark), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.06); }
+
+.footer-dark{ background: #0b1020; color: #cbd5e1 }
+*{ transition: background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease; }
